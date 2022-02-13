@@ -4,11 +4,14 @@ RUN ls -R /
 
 ADD ./source/my_script.py /
 
+RUN echo "Copying:"
 COPY venv .
+RUN echo "done Copying:"
 ENV VIRTUAL_ENV=./venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+RUN echo "Listing virtual env"
 RUN ls -R $VIRTUAL_ENV
 
 RUN echo "CURRENT:"
