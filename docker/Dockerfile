@@ -16,7 +16,7 @@ COPY venv .
 RUN echo "Aobut to list"
 RUN ls -R .
 RUN echo "Aobut to run python 3"
-ENV VIRTUAL_ENV="./venv"
+ENV VIRTUAL_ENV="/app/venv"
 RUN echo "Aobut to run python 3"
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
