@@ -6,19 +6,11 @@ LABEL version="0.1"
 LABEL description="Hello World Python container"
 
 
-RUN echo "hello"
 WORKDIR /app
 
-RUN echo "Aobut to add my script"
 ADD ./source/my_script.py .
-RUN echo "Aobut to run copy"
 COPY venv .
-RUN echo "Aobut to list"
-RUN ls -R .
-RUN echo "Aobut to run python 3"
-#ENV VIRTUAL_ENV="/app/venv"
 ENV VIRTUAL_ENV="./"
-RUN echo "Aobut to run python 3"
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 CMD [ "python", "./my_script.py" ]
