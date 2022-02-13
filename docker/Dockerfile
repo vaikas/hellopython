@@ -9,22 +9,8 @@ WORKDIR /
 
 ADD ./source/my_script.py .
 COPY venv .
-RUN echo "Doing LS"
-RUN ls -R .
-RUN echo "Done running LS"
-
-RUN echo "setting up the venv!!!!!!!"
 ENV VIRTUAL_ENV="./venv"
-RUN echo "Really setting up the venv"
-RUN which python
 RUN python -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-RUN echo "Listing virtual env"
-RUN ls -R $VIRTUAL_ENV
-
-RUN echo "CURRENT:"
-RUN ls -R .
-RUN echo $PATH
 CMD [ "python", "./my_script.py" ]
 
