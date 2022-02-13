@@ -7,7 +7,7 @@ ADD ./source/my_script.py /
 RUN echo "Copying:"
 COPY venv .
 RUN echo "done Copying:"
-ENV VIRTUAL_ENV=./venv
+ENV VIRTUAL_ENV="./venv"
 RUN echo "setting up the venv"
 RUN python -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
