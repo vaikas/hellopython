@@ -8,7 +8,8 @@ RUN echo "Copying:"
 COPY venv .
 RUN echo "done Copying:"
 ENV VIRTUAL_ENV=./venv
-RUN python3 -m venv $VIRTUAL_ENV
+RUN echo "setting up the venv"
+RUN python -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN echo "Listing virtual env"
