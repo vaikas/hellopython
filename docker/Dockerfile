@@ -5,6 +5,8 @@ LABEL maintainer="vaikas@chainguard.dev"
 LABEL version="0.1"
 LABEL description="Hello World Python container"
 
+
+RUN echo "hello"
 WORKDIR /
 
 ADD ./source/my_script.py .
