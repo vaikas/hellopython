@@ -9,8 +9,9 @@ WORKDIR /
 
 ADD ./source/my_script.py .
 COPY venv .
-
+RUN echo "Doing LS"
 RUN ls -R .
+RUN echo "Done running LS"
 
 RUN echo "setting up the venv!!!!!!!"
 ENV VIRTUAL_ENV="./venv"
