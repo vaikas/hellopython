@@ -13,5 +13,6 @@ COPY venv .
 ENV VIRTUAL_ENV="./"
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PYTHONPATH=./lib/python3.10/site-packages
 CMD [ "python", "./my_script.py" ]
 
